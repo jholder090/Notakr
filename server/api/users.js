@@ -1,12 +1,13 @@
 const router = require('express').Router();
+const User = require('../db/User')
 
 // api/users
 router.get('/', async (req, res, next) => {
   try {
-console.log("ROUTE WORKED!!");
-res.send("TPHTPHTEPHTPHTPHT!!!!")
+    const users = await User.findAll();
+    res.json(users);
   } catch (err) {
-    next (err)
+    next(err)
   }
 })
 
