@@ -1,7 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { Main } from "./components";
 
-ReactDOM.render(
-  <div>Hello, world!</div>,
-  document.getElementById('app') // make sure this is the same as the id of the div in your index.html
+const container = document.getElementById("app")
+const root = createRoot(container)
+
+root.render(
+  <Main />
 );
+
+// import { store } from "./store";
+// store={store}
+
+// import { Provider } from "react-redux";
+// import { BrowserRouter as Router } from "react-router-dom";
