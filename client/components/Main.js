@@ -1,12 +1,13 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import SignIn from './SignIn';
+// import SignIn from './SignIn';
+import Home from "./Home";
 
 const Main = () => {
   return (
     <Routes>
-      <Route exact path="/" element={<Navigate to="/signIn" />} />
-      <Route exact path='/signIn' element={<SignIn />} />
+      <Route exact path="/" element={<Navigate to="/home" />} />
+      <Route exact path='/home' element={<Home />} />
     </Routes>
   );
 };

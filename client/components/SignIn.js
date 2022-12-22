@@ -17,17 +17,9 @@ import axios from 'axios';
 const theme = createTheme();
 
 
-const SignIn = () => {
+const SignIn = ({signIn, attemptTokenLogin}) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
-  const signIn = async (credentials) => {
-    const response = await axios.post('/api/users', credentials);
-    const  { user }  = response.data;
-    console.log("REACT USER", user)
-    // window.localStorage.setItem('token', token);
-    // attemptTokenLogin();
-  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -39,7 +31,6 @@ const SignIn = () => {
     //   password: data.get('password'),
     // });
   };
-
 
   return (
     <ThemeProvider theme={theme}>
