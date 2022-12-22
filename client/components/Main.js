@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 // import SignIn from './SignIn';
 import Home from "./Home";
+import SignIn from './SignIn';
 
 const Main = () => {
   return (

@@ -20,11 +20,13 @@ const syncAndSeed = async () => {
   });
 
   await Note.create({
-    text: "Hi, I'm Tom!"
+    text: "Hi, I'm Tom!",
+    userId: 1
   });
 
   await Note.create({
-    text: "Hi, I'm Pat!"
+    text: "Hi, I'm Pat!",
+    userId: 2
   });
 
   console.log("SEEDING INDEEDING!")

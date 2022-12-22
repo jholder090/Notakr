@@ -41,6 +41,17 @@ if (user) {
     error.status = 401;
     throw error;
   }
-}
+};
+
+User.findNotes = async (token, id) => {
+  const payload = await jwt.verify(token, process.env.JWT)
+  if (id == payload.userId) {
+    const user = await User.findByPk(payload.userId);
+    if (user) {
+      const notes = await user.getNotes();
+      return notes;
+    }
+  }
+};
 
 module.exports = User;

@@ -22,6 +22,15 @@ router.get('/', async (req, res, next) => {
   }catch (err) {
     next (err)
   }
+});
+
+// api/user/:id/notes
+router.get('/:id/notes', async (req, res, next) => {
+  try {
+    res.send(await User.findNotes(req.headers.authorization, req.params.id))
+  } catch (err) {
+    next(err);
+  }
 })
 
 
